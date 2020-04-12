@@ -11,7 +11,7 @@ You can find the script in `/var/lib/cloud/instance/user-data.txt` on the instan
 ## Configure instance
 ### Open ports
 ```
-aws lightsail open-instance-public-ports --port-info fromPort=8080,toPort=8080,protocol=TCP --instance-name streaming-vm
+aws lightsail open-instance-public-ports --port-info fromPort=1935,toPort=1935,protocol=TCP --instance-name streaming-vm
 ```
 
 ### Assign static IP (optional)
