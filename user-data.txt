@@ -16,23 +16,23 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 # clone
 cd /home/centos/
-git clone https://github.com/claesmathias/lightsail-streaming-server.git
+git clone https://github.com/claesmathias/lightsail-nginx-rmtp.git
 
 # set docker-compose environment variables
-cat <<EOF >/home/centos/lightsail-streaming-server/.env
+cat <<EOF >/home/centos/lightsail-nginx-rmtp/.env
 DUCKDNS_SUBDOMAINS=subdomain.duckdns.org
 DUCKDNS_TOKEN=duck-dns-token
 TZ=Europe/Brussels
 EOF
 
 # set permissions
-sudo chown -R centos:centos /home/centos/lightsail-streaming-server/
+sudo chown -R centos:centos /home/centos/lightsail-nginx-rmtp/
 
 # set selinux permissions
 sudo chcon -Rt svirt_sandbox_file_t /home/centos
 
 # start docker containers
-cd /home/centos/lightsail-streaming-server/
+cd /home/centos/lightsail-nginx-rmtp/
 /usr/local/bin/docker-compose up -d
 
 # reset ssh permissions
