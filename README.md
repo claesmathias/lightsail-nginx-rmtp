@@ -36,3 +36,19 @@ Login to your instance
 ssh -i LightsailDefaultKey-eu-central-1.pem  centos@PUBLIC_IP
 ```
 View instances [here](https://lightsail.aws.amazon.com/ls/webapp/home/instances "View instances")
+
+## Stream video
+
+## Server test
+``` wget https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_1920_18MG.mp4
+ffmpeg -re -i file_example_MP4_1920_18MG.mp4 -codec copy -f flv rtmp://localhost:1935/live/test
+```
+
+## Client test
+* Open a [VLC](http://www.videolan.org/vlc/index.html) player (it also works in Raspberry Pi using `omxplayer`)
+* Click in the "Media" menu
+* Click in "Open Network Stream"
+* Enter the URL from above as `rtmp://<ip_of_host>/live/<key>` replacing `<ip_of_host>` with the IP of the host in which the container is running and `<key>` with the key you created in OBS Studio. For example: `rtmp://192.168.0.30/live/test`
+* Click "Play"
+* Now VLC should start playing whatever you are transmitting from OBS Studio
+
