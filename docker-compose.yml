@@ -2,13 +2,11 @@ version: '3'
 
 services:
 
-  streaming-consumer:
-    image: codeworksio/nginx
-    container_name: streaming-consumer
-    volumes:
-      - /home/centos/lightsail-streaming-server/www/:/var/www:ro
+  nginx-rtmp:
+    image: tiangolo/nginx-rtmp
+    container_name: nginx-rtmp
     ports:
-      - "8080:8080"
+      - "1935:1935"
 
   duckdns:
     image: linuxserver/duckdns
