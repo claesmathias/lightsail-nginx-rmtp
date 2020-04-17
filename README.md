@@ -41,7 +41,8 @@ View instances [here](https://lightsail.aws.amazon.com/ls/webapp/home/instances 
 
 ## Server test
 ``` wget https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_1920_18MG.mp4
-ffmpeg -re -i file_example_MP4_1920_18MG.mp4 -codec copy -f flv rtmp://localhost:1935/live/key
+ffmpeg -re -i file_example_MP4_1920_18MG.mp4 -codec copy -f flv rtmp://localhost/live/key
+ffmpeg -re -i video.mkv -c:v libx264 -preset veryfast -maxrate 3000k -bufsize 6000k -pix_fmt yuv420p -g 50 -c:a aac -b:a 160k -ac 2 -ar 44100 -f flv rtmp://localhost/live/key
 ```
 
 ## Client test
