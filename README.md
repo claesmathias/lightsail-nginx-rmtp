@@ -54,7 +54,7 @@ ffmpeg -re -i video.mkv -vf subtitles=subtitle.srt -c:v libx264 -preset veryfast
 ```
 
 ## Client test
-* Open a [VLC](http://www.videolan.org/vlc/index.html) player (it also works in Raspberry Pi using `omxplayer`)
+* Open a [VLC](http://www.videolan.org/vlc/index.html) player
 * Click in the "Media" menu
 * Click in "Open Network Stream"
 * Enter the URL from above as `rtmp://<ip_of_host>/live/<key>` replacing `<ip_of_host>` with the IP of the host in which the container is running and `<key>` with the key you used above. For example: `rtmp://192.168.0.30/live/test`
